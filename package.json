@@ -2,11 +2,13 @@
   "name": "@toxictoast/toasty",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "nx": "nx"
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@nx/js": "17.0.2",
+    "@nx/node": "^17.0.2",
     "@nx/workspace": "17.0.2",
     "nx": "17.0.2"
   }
