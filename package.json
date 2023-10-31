@@ -17,6 +17,7 @@
   },
   "private": true,
   "devDependencies": {
+    "@nx/esbuild": "17.0.2",
     "@nx/eslint": "17.0.2",
     "@nx/eslint-plugin": "17.0.2",
     "@nx/jest": "17.0.2",
@@ -29,6 +30,7 @@
     "@types/node": "~20.8.10",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
+    "esbuild": "^0.19.2",
     "eslint": "~8.46.0",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.3",
@@ -44,6 +46,7 @@
   "dependencies": {
     "@twurple/auth": "^7.0.4",
     "@twurple/chat": "^7.0.4",
+    "axios": "^1.0.0",
     "tslib": "^2.6.2"
   }
 }
