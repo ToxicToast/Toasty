@@ -12,7 +12,8 @@
     "update:all": "npx npm-check-updates -u",
     "dep-graph": "nx dep-graph",
     "husky:install": "husky install",
-    "husky:scripts": "npm run lintstaged && npm run nx test:affected"
+    "husky:scripts": "npm run lintstaged && npm run nx test:affected",
+    "lintstaged": "lint-staged"
   },
   "private": true,
   "devDependencies": {
@@ -41,6 +42,8 @@
     "typescript": "~5.2.2"
   },
   "dependencies": {
+    "@twurple/auth": "^7.0.4",
+    "@twurple/chat": "^7.0.4",
     "tslib": "^2.6.2"
   }
 }
