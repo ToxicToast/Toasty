@@ -4,6 +4,6 @@ describe('Refresh Exception', () => {
   it('should throw an error with specific message when called', () => {
     expect(() => {
       RefreshException();
-    }).toThrowError('RefreshException');
+    }).toThrowError('[Toasty Exception] Failed to Refresh Token');
   });
 });
