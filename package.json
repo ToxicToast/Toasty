@@ -13,7 +13,8 @@
     "dep-graph": "nx dep-graph",
     "husky:install": "husky install",
     "husky:scripts": "npm run lintstaged && npm run nx test:affected",
-    "lintstaged": "lint-staged"
+    "lintstaged": "lint-staged",
+    "serve:bot": "nx serve bot"
   },
   "private": true,
   "devDependencies": {
