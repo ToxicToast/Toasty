@@ -5,3 +5,4 @@ export * from './exceptions';
 export * from './helpers';
 export * from './interfaces';
 export * from './types';
+export * from './events';
