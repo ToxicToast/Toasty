@@ -5,5 +5,5 @@ export interface Plugin<Type> {
   name: string;
   event: Events;
   init?: Optional<() => void>;
-  execute?: Optional<(...args: Array<Type>) => void>;
+  execute?: Optional<(data: Type) => void>;
 }
