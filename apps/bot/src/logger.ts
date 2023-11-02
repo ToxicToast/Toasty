@@ -8,19 +8,19 @@ export class Logger {
     this.isActive = isActive;
   }
 
-  public log(...args: Array<any>): void {
+  public log(...args: Array<unknown>): void {
     if (this.isActive) {
       this.logger.log(this.prefix, this.suffix, ...args);
     }
   }
 
-  public debug(...args: Array<any>): void {
+  public debug(...args: Array<unknown>): void {
     if (this.isActive) {
       this.logger.debug(this.prefix, this.suffix, ...args);
     }
   }
 
-  public error(...args: Array<any>): void {
+  public error(...args: Array<unknown>): void {
     if (this.isActive) {
       this.logger.error(this.prefix, this.suffix, ...args);
     }

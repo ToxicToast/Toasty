@@ -9,6 +9,7 @@ import {
   JoinData,
   PartData,
   MessageData,
+  LoadPluginHelper,
 } from '@toxictoast/shared';
 import { Auth } from './auth';
 import { Logger } from './logger';
@@ -49,24 +50,7 @@ export class Bot {
   }
 
   private loadPlugin<Type>(plugin: Plugin<Type>): void {
-    const { event, init, execute } = plugin;
-    if (init) {
-      init();
-    }
-    if (execute) {
-      if (event === 'join') {
-        const joinPlugin = plugin as Plugin<JoinData>;
-        JoinEvent(this.chatProvider, joinPlugin.execute);
-      } else if (event === 'part') {
-        const partPlugin = plugin as Plugin<PartData>;
-        PartEvent(this.chatProvider, partPlugin.execute);
-      } else if (event === 'message') {
-        const messagePlugin = plugin as Plugin<MessageData>;
-        MessageEvent(this.chatProvider, messagePlugin.execute);
-      } else {
-        this.logProvider.error(`Event ${event} not found`);
-      }
-    }
+    LoadPluginHelper(this.chatProvider, this.logProvider, plugin);
   }
 
   public addPlugin<Type>(plugin: Plugin<Type>): Bot {
@@ -82,6 +66,7 @@ export class Bot {
         index + 1,
         '/',
         this.plugins.length,
+        `(${plugin.name})`,
       );
       this.loadPlugin(plugin);
     });
