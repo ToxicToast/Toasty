@@ -2,6 +2,10 @@
   "name": "@toxictoast/toasty",
   "version": "0.0.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ToxicToast/Toasty.git"
+  },
   "scripts": {
     "nx": "nx",
     "test:affected": "nx affected:test --parallel --maxParallel=3 --codeCoverage --collectCoverage --coverageReporters=lcov",
