@@ -56,13 +56,14 @@ export class Auth {
 
   private onRefresh(): void {
     this.authProvider.onRefresh((userId: string, tokenData: AccessToken) => {
+      this.logProvider.debug('Refreshing access token for user', userId);
       this.access_token = tokenData.accessToken ?? null;
       this.refresh_token = tokenData.refreshToken ?? null;
     });
   }
 
   private onRefreshFailure(): void {
-    this.authProvider.onRefreshFailure((userId) => {
+    this.authProvider.onRefreshFailure(() => {
       RefreshException();
     });
   }
