@@ -71,6 +71,9 @@ export class Bot {
       this.logProvider.debug('Joining channels:', this.channels.join(', '));
       this.logProvider.debug('Successfully connected to Twitch Chat');
     });
+    this.chatProvider.onAuthenticationFailure(() => {
+      this.logProvider.error('Authentication failed');
+    });
     //
     return this;
   }

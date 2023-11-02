@@ -41,17 +41,21 @@ export class Auth {
   }
 
   private addUser(): void {
-    this.authProvider.addUser(
-      this.user_id,
-      {
-        accessToken: this.access_token ?? undefined,
-        refreshToken: this.refresh_token ?? null,
-        expiresIn: null,
-        obtainmentTimestamp: Math.ceil(new Date().getTime() / 1000),
-      },
-      ['chat'],
-    );
-    this.logProvider.debug('Successfully authenticated');
+    if (this.refresh_token !== '') {
+      this.authProvider.addUser(
+        this.user_id,
+        {
+          accessToken: this.access_token ?? undefined,
+          refreshToken: this.refresh_token ?? null,
+          expiresIn: null,
+          obtainmentTimestamp: Math.ceil(new Date().getTime() / 1000),
+        },
+        ['chat'],
+      );
+      this.logProvider.debug('Successfully authenticated');
+    } else {
+      this.logProvider.error('Refresh Token can not be empty');
+    }
   }
 
   private onRefresh(): void {
