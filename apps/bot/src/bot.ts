@@ -3,16 +3,10 @@ import {
   Plugin,
   Option,
   Authentication,
-  JoinEvent,
-  PartEvent,
-  MessageEvent,
-  JoinData,
-  PartData,
-  MessageData,
   LoadPluginHelper,
+  Logger,
 } from '@toxictoast/shared';
 import { Auth } from './auth';
-import { Logger } from './logger';
 
 export class Bot {
   private readonly channels: Array<string>;

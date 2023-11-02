@@ -2,10 +2,10 @@ import { AccessToken, RefreshingAuthProvider } from '@twurple/auth';
 import {
   AccessTokenException,
   Authentication,
+  Logger,
   Nullable,
   RefreshException,
 } from '@toxictoast/shared';
-import { Logger } from './logger';
 
 export class Auth {
   private readonly user_id: string;
