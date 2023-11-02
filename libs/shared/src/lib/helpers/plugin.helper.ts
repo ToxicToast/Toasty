@@ -6,9 +6,11 @@ import {
   PartEvent,
   MessageData,
   MessageEvent,
+  TimeoutData,
+  TimeoutEvent,
 } from '../events';
 import { ChatClient } from '@twurple/chat';
-import { Logger } from '../../../../../apps/bot/src/logger';
+import { Logger } from '../classes';
 
 export function LoadPluginHelper<Type>(
   chatProvider: ChatClient,
@@ -31,6 +33,9 @@ export function LoadPluginHelper<Type>(
     } else if (event === 'message') {
       const messagePlugin = plugin as Plugin<MessageData, Message>;
       MessageEvent(chatProvider, messagePlugin.execute);
+    } else if (event === 'timeout') {
+      const timeoutPlugin = plugin as Plugin<TimeoutData>;
+      TimeoutEvent(chatProvider, timeoutPlugin.execute);
     } else {
       logProvider.error(`Event ${event} not found`);
     }
