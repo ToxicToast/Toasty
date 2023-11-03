@@ -13,9 +13,9 @@
         "outputPath": "dist/apps/bot",
         "format": ["cjs"],
         "bundle": true,
-        "main": "apps/bot/src/bot.ts",
+        "main": "apps/bot/src/main.ts",
         "tsConfig": "apps/bot/tsconfig.app.json",
-        "assets": ["apps/bot/src/assets", "README.md"],
+        "assets": ["apps/bot/src/assets"],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
