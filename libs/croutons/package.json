@@ -1,0 +1,16 @@
+{
+  "name": "@toxictoast/croutons",
+  "version": "0.1.0",
+  "description": "Types of Toasty",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ToxicToast/Croutons.git"
+  },
+  "author": {
+    "name": "Thomas Kortyka"
+  },
+  "dependencies": {
+    "@twurple/chat": "^7.0.4",
+    "tslib": "^2.6.2"
+  }
+}

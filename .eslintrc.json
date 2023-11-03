@@ -15,6 +15,10 @@
               {
                 "sourceTag": "scope:shared",
                 "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "scope:bot",
+                "onlyDependOnLibsWithTags": ["scope:bot", "scope:shared"]
               }
             ]
           }

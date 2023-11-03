@@ -1,7 +1,20 @@
 {
   "name": "@toxictoast/toasty",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
+  "description": "A modular, extensible, and easy to set up Twitch bot built on top of twurple.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ToxicToast/Toasty.git"
+  },
+  "keywords": [
+    "twitch",
+    "bot",
+    "moderation"
+  ],
+  "author": {
+    "name": "Thomas Kortyka"
+  },
   "scripts": {
     "nx": "nx",
     "test:affected": "nx affected:test --parallel --maxParallel=3 --codeCoverage --collectCoverage --coverageReporters=lcov",
@@ -13,10 +26,13 @@
     "dep-graph": "nx dep-graph",
     "husky:install": "husky install",
     "husky:scripts": "npm run lintstaged && npm run nx test:affected",
-    "lintstaged": "lint-staged"
+    "lintstaged": "lint-staged",
+    "serve:bot": "nx serve bot",
+    "publish:toasty": "nx publish toasty --ver=0.1.0",
+    "publish:croutons": "nx publish croutons --ver=0.1.0"
   },
-  "private": true,
   "devDependencies": {
+    "@nx/esbuild": "17.0.2",
     "@nx/eslint": "17.0.2",
     "@nx/eslint-plugin": "17.0.2",
     "@nx/jest": "17.0.2",
@@ -29,6 +45,7 @@
     "@types/node": "~20.8.10",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
+    "esbuild": "^0.19.2",
     "eslint": "~8.46.0",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.3",
@@ -39,11 +56,16 @@
     "prettier": "^3.0.3",
     "ts-jest": "^29.1.1",
     "ts-node": "10.9.1",
-    "typescript": "~5.2.2"
+    "typescript": "~5.2.2",
+    "verdaccio": "^5.0.4"
   },
   "dependencies": {
     "@twurple/auth": "^7.0.4",
     "@twurple/chat": "^7.0.4",
+    "axios": "^1.0.0",
     "tslib": "^2.6.2"
+  },
+  "nx": {
+    "includedScripts": []
   }
 }
