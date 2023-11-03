@@ -15,6 +15,9 @@
     "name": "Thomas Kortyka"
   },
   "dependencies": {
-    "@toxictoast/croutons": "^0.1.0"
+    "@toxictoast/croutons": "^0.1.0",
+    "@twurple/auth": "^7.0.4",
+    "@twurple/chat": "^7.0.4",
+    "tslib": "^2.6.2"
   }
 }

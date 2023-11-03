@@ -8,5 +8,9 @@
   },
   "author": {
     "name": "Thomas Kortyka"
+  },
+  "dependencies": {
+    "@twurple/chat": "^7.0.4",
+    "tslib": "^2.6.2"
   }
 }
