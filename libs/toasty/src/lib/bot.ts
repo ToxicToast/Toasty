@@ -5,7 +5,7 @@ import {
   Authentication,
   LoadPluginHelper,
   Logger,
-} from '@toxictoast/shared';
+} from '@toxictoast/croutons';
 import { Auth } from './auth';
 
 export class Bot {

@@ -1,0 +1,45 @@
+{
+  "name": "toasty",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/toasty/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/toasty",
+        "tsConfig": "libs/toasty/tsconfig.lib.json",
+        "packageJson": "libs/toasty/package.json",
+        "main": "libs/toasty/src/index.ts",
+        "assets": ["libs/toasty/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs toasty {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/toasty/**/*.ts", "libs/toasty/package.json"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/toasty/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": ["scope:bot"]
+}

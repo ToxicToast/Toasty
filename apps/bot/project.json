@@ -12,15 +12,16 @@
         "platform": "node",
         "outputPath": "dist/apps/bot",
         "format": ["cjs"],
-        "bundle": false,
-        "main": "apps/bot/src/main.ts",
+        "bundle": true,
+        "main": "apps/bot/src/bot.ts",
         "tsConfig": "apps/bot/tsconfig.app.json",
-        "assets": ["apps/bot/src/assets"],
+        "assets": ["apps/bot/src/assets", "README.md"],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
           "outExtension": {
-            ".js": ".js"
+            ".js": ".js",
+            ".ts": ".ts"
           }
         }
       },
@@ -30,7 +31,8 @@
           "esbuildOptions": {
             "sourcemap": false,
             "outExtension": {
-              ".js": ".js"
+              ".js": ".js",
+              ".ts": ".ts"
             }
           }
         }

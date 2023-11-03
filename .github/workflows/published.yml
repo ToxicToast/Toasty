@@ -9,13 +9,20 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@toxictoast'
-      - run: npm i
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Get Tag
+        run: echo "value=${{ github.ref || format('{0}{1}', 'refs/tags/', github.event.release.tag_name) }}" >> $GITHUB_OUTPUT
+
+      - name: Publish Toasty
+        run: npm run nx publish toasty --ver={{$GITHUB_OUTPUT}}
+
+      - name: Publish Croutons
+        run: npm run nx publish croutons --ver={{$GITHUB_OUTPUT}}

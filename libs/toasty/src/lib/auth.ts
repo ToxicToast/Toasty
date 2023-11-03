@@ -5,7 +5,7 @@ import {
   Logger,
   Nullable,
   RefreshException,
-} from '@toxictoast/shared';
+} from '@toxictoast/croutons';
 
 export class Auth {
   private readonly user_id: string;

@@ -3,7 +3,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@toxictoast/shared": ["libs/shared/src/index.ts"]
+      "@toxictoast/croutons": ["libs/croutons/src/index.ts"],
+      "@toxictoast/shared": ["libs/shared/src/index.ts"],
+      "@toxictoast/toasty": ["libs/toasty/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

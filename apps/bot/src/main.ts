@@ -1,6 +1,6 @@
-import { Bot } from './bot';
+import { Bot } from '@toxictoast/toasty';
 import { environment } from './environment';
-import { Events } from '@toxictoast/shared';
+import { Events } from '@toxictoast/croutons';
 
 const bot = new Bot({
   logging: true,
