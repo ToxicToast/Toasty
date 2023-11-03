@@ -6,7 +6,6 @@
 
 ![License](https://img.shields.io/github/license/ToxicToast/Toasty)
 
-
 [![Node Version](https://img.shields.io/static/v1?label=Node&message=v18.12.1&color=darkgreen&style=for-the-badge)](https://nodejs.org)
 [![npm Version](https://img.shields.io/static/v1?label=npm&message=9.8.1&color=darkgreen&style=for-the-badge)](https://nodejs.org)
 [![Typescript Version](https://img.shields.io/static/v1?label=Typescript&message=5.2.2&color=darkgreen&style=for-the-badge)](https://typescriptlang.org)
